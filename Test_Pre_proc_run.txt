@@ -1,0 +1,1 @@
+PreProcess.py -d <base directory> -s <sequence start number> -b <master bias location> -t <target name> -p <process (reg, stack, preproc)) -f <Filter FWHM> -w <Filter wFWHM> -r <Filter Roundness (0-1)> 
