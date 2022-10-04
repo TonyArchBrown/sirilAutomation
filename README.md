@@ -17,7 +17,7 @@ Base Directory
     |--*.cr2
     
 ### Base Directory
-Optional - if no base directory is provided then the current working directory is assumed to be the directory otherwise provie the path to the base directory
+Optional - if no base directory is provided then the current working directory is assumed to be the directory otherwise provide the path to the base directory
 
 ### Master bias file path
 Required - path and name of the master bias file to use to use for the pre-processing of files
@@ -44,4 +44,4 @@ Do not stack frames where the light frame's FWHW values is greater than this val
 Do not stack frames where the light frame's weighted FWHW values is greater than this value.  Useful number to start with is 5, some will think this not strict enough!
 
 #### filter Roundness
-Do not stack frames where the light frame's Roundness is less than this value.  Useful number to start with is 0.8, 80% roundness is practically indistingishable from round.
+Do not stack frames where the light frame's Roundness is less than this value.  Useful number to start with is 0.8, 80% roundness is practically indistinguishable from round.

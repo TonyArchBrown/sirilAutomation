@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["-d", "/Volumes/Samsung_T5/Siril_Test",
+                    "-s", "1",
+                    "-b", "/Volumes/Samsung_T5/_Masters/bias/iso800/biases_stacked.fit",
+                    "-t", "IC 1848",
+                    "-p", "stack",
+                    "-f", "3.1",
+                    "-w", "5",
+                    "-r", "0.8",
+                    "-c", "2" ]
+        }
+    ]
+}

@@ -15,6 +15,7 @@ def set_defaults():
     global arg_filterfwhm
     global arg_filterround
     global arg_filterwfwhm
+    global arg_cpus
 
     # Set default args
     arg_workingdir = os.getcwd()
@@ -25,6 +26,7 @@ def set_defaults():
     arg_filterfwhm = 10
     arg_filterround = 0.1
     arg_filterwfwhm = 30
+    arg_cpus = 4
 
 
 def init(argv):
@@ -34,9 +36,9 @@ def init(argv):
     set_defaults()
 
     try:
-        opts, args = getopt.getopt(argv[1:], "hd:s:b:t:p:f:w:r:", ["help", "basedir=", 
+        opts, args = getopt.getopt(argv[1:], "hd:s:b:t:p:f:w:r:c:", ["help", "basedir=", 
         "sequencestart=", "masterbiasfile=", "targetname=", "process=", 
-        "filterfwhm=", "filterwfwhm=", "filterround=" ])
+        "filterfwhm=", "filterwfwhm=", "filterround=", "cpu=" ])
         # Minimum number of arguments are bias location and target name - all others can de defaulted
         if len(opts)<2:
             print(arg_help)  # print the help message
@@ -81,6 +83,9 @@ def init(argv):
         elif opt in ("-w","--filterwfwhm"):
             global arg_filterwfwhm
             arg_filterwfwhm=arg
+        elif opt in ("-c","--cpu"):
+            global arg_cpus
+            arg_cpus=arg
     
 
 def count_files(dir):
@@ -151,7 +156,7 @@ def process():
         # Set preferences
         cmd.set32bits()
         cmd.setext('fit')
-        cmd.setcpu(3)
+        cmd.setcpu(int(arg_cpus))
         
         # Define the file paths from the globals
         processDir=os.path.join(arg_workingdir, 'process')
@@ -172,6 +177,7 @@ def process():
         print('    Process Directory = ' + processDir)
         print('\n  Options: -')
         print('    Index Start = ' + str(indexStart))
+        print('    CPUs to use = ' + arg_cpus)
         print('    Process Stack = ' + arg_process)
         if arg_process=="stack":
             print('      Filter FWHM = ' + str(arg_filterfwhm))
