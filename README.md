@@ -9,12 +9,18 @@ python3 PreProcess.py -b <Master bias file path> -t <Target location name> -p <s
 The assumption when running the command is that there will be a directory layout as follows: -
 Base Directory
 |-Darks
+
   |-*.cr2
+
 |-Flats
+  
   |-*.cr2
+
 |-Lights
+  
   |-Target
-    |--*.cr2
+  
+  |--*.cr2
     
 ### Base Directory -d
 Optional - if no base directory is provided then the current working directory is assumed to be the directory otherwise provide the path to the base directory
