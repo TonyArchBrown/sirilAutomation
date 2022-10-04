@@ -177,7 +177,7 @@ def process():
         print('    Process Directory = ' + processDir)
         print('\n  Options: -')
         print('    Index Start = ' + str(indexStart))
-        print('    CPUs to use = ' + arg_cpus)
+        print('    CPUs to use = ' + str(arg_cpus))
         print('    Process Stack = ' + arg_process)
         if arg_process=="stack":
             print('      Filter FWHM = ' + str(arg_filterfwhm))
