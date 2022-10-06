@@ -7,29 +7,20 @@ Simply run the PreProcess.py file with parameters:-
 python3 PreProcess.py -b <Master bias file path> -t <Target location name> -p <stage> -f <filter FWHM> -w <filter wFWHM> -r <filter Roundness> -d <base directory> -s <Start Index>
 
 The assumption when running the command is that there will be a directory layout as follows: -
-Base Directory
-|-Darks
 
-  |-*.cr2
+![Expected directory organisation](./images/ExampleFileStructure.png)
 
-|-Flats
-  
-  |-*.cr2
-
-|-Lights
-  
-  |-Target
-  
-  |--*.cr2
+Folders expect to contain *.cr2 raw cannon files.
+The 'process' directory is expected to have already been created, any files in this directory with matching names during processing will be overwritten.
     
 ### Base Directory -d
-Optional - if no base directory is provided then the current working directory is assumed to be the directory otherwise provide the path to the base directory
+Optional - if no base directory is provided then the current working directory is assumed to be the directory otherwise provide the path to the base directory.  In the image above, the path to Siril_Test would be the base directory.
 
 ### Master bias file path -b
 Required - path and name of the master bias file to use to use for the pre-processing of files
 
 ### Target location name -t
-Required - Source light files are expecting to be in a folder that corresponds to the target.  
+Required - Source light files are expecting to be in a folder that corresponds to the target.  In the image above, the target would be IC\ 1848 - '\\' encodes the space character.
 
 ### Stage -p
 Optional - if not provided then full Preprocessing / registration and stacking will be performed,  otherwise tell the script to stop at a stage of your choosing.  This allows manual intervention for example to run a background extraction on each pre processed light, or to manually filter out post registration.
