@@ -1,1 +1,1 @@
-PreProcess.py -c <Camera (CANON_DSLR / ZWO_OSC)> -d <base directory> -s <sequence start number> -a <master dark location> -b <master bias location> -t <target name> -p <process (reg, stack, preproc)) -f <Filter FWHM> -w <Filter wFWHM> -r <Filter Roundness (0-1)> -c <CPUS to use>
+PreProcess.py -i <Camera (CANON_DSLR / ZWO_OSC)> -d <base directory> -s <sequence start number> -a <master dark location> -b <master bias location> -t <target name> -p <process (reg, stack, preproc)> -f <Filter FWHM> -w <Filter wFWHM> -r <Filter Roundness (0-1)> -c <CPUS to use>
